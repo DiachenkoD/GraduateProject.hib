@@ -1,0 +1,35 @@
+a{
+    color:green;
+    font-size:24px;
+    margin:10%;
+}
+
+p{
+    margin:10px;
+}
+
+div{
+    color: red;
+}
+#shit{
+    color: #ffffff;
+    background-color:#4E8DF5;
+    padding:15px;
+    margin:15px;
+    border: 5px solid #D85346;
+    border-radius:20px;
+}
+
+.dicks{
+    color: rgb(0,255,0);
+    font-style:italic;
+    font-size:24px;
+    widows:12;
+    background-color:rgba(255,255,0,0.3);
+    border: 5px solid green;
+    padding:40px;
+}
+
+a:hover{
+    border: 10px solid red;
+}
