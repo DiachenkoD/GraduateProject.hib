@@ -25,7 +25,7 @@ public class GameFull {
     public GameFull(){}
 
     public GameFull(long gameFullInformation, String name, String image, String images, String description, String reviews, String gameplay) {
-        this.gameFullInformation = gameFullInformation;
+        this.idGameFullInformation = gameFullInformation;
         this.name = name;
         this.image = image;
         this.images = images;
@@ -99,7 +99,7 @@ public class GameFull {
         this.gameplay = gameplay;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "game")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "gameFull")
     public Set<Image> getImagesSet() {
         return imagesSet;
     }

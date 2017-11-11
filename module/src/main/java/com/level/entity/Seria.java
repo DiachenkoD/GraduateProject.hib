@@ -28,7 +28,7 @@ public class Seria {
     }
 
     @Id
-    @GeneratedValue(generator = "incremennt")
+    @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment",strategy = "increment")
     @Column(name = "idSeria")
     public long getIdSeria(){
@@ -57,7 +57,8 @@ public class Seria {
         this.image = image;
     }
 
-    @Column(name = "shortDescription")
+
+    @Column(name = "shortDescription",length = 700)
     public String getShortDescription() {
         return shortDescription;
     }

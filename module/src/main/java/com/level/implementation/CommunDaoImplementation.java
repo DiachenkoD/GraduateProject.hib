@@ -1,13 +1,11 @@
 package com.level.implementation;
 
-import com.level.entity.Game;
 import com.level.factory.HibernateSessionFactory;
 import com.level.interfaces.CommunDaoInterface;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
 
-import javax.swing.*;
 import java.sql.SQLException;
 import java.util.HashSet;
 import java.util.Set;
@@ -22,7 +20,8 @@ public class CommunDaoImplementation<T> implements CommunDaoInterface<T> {
             session.save(object);
             session.getTransaction().commit();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Error I/O", JOptionPane.OK_OPTION);
+            e.printStackTrace();
+          //  JOptionPane.showMessageDialog(null, e.getMessage(), "Error I/O", JOptionPane.OK_OPTION);
             //MUST be dan
         }finally {
             if (session != null & session.isOpen()){
@@ -47,7 +46,7 @@ public class CommunDaoImplementation<T> implements CommunDaoInterface<T> {
     public T getUserByName(String name) throws SQLException {
         T object = null;
         try (Session session = HibernateSessionFactory.getSessionFactory().openSession()) {
-            Query query = session.createQuery("FROM Seria WHERE name =:paramName");
+            Query query = session.createQuery("FROM Seria WHERE seriaName =:paramName");
             query.setParameter("paramName", name);
             object = (T) query.uniqueResult();
         } catch (Exception e) {
@@ -69,12 +68,12 @@ public class CommunDaoImplementation<T> implements CommunDaoInterface<T> {
     }
 
     @Override
-    public Long getObjectIdByName(String name) throws SQLException {
+    public long getObjectIdByName(String name) throws SQLException {
         Long idObject = null;
         try (Session session = HibernateSessionFactory.getSessionFactory().openSession()) {
-            Query query = session.createQuery("SELECT idSeria FROM Seria WHERE name =:paramName");
+            Query query = session.createQuery("SELECT idSeria FROM Seria WHERE seriaName =:paramName");
             query.setParameter("paramName", name);
-            idObject = (Long) query.uniqueResult();
+            idObject = (long) query.uniqueResult();
         } catch (Exception e) {
             e.printStackTrace();
             //MUST be dan

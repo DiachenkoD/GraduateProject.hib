@@ -14,7 +14,7 @@ public class Factory<T> {
         return instance;
     }
 
-    public CommunDaoImplementation<T> getUserDAO() {
+    public CommunDaoImplementation<T> getCommunDAO() {
         if (userDAO == null) {
             userDAO = new CommunDaoImplementation<>();
         }

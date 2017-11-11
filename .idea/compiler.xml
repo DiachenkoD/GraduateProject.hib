@@ -15,7 +15,7 @@
       <module name="GraduateProject" target="1.5" />
       <module name="manager" target="1.5" />
       <module name="module" target="1.8" />
-      <module name="webApp" target="1.5" />
+      <module name="webApp" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
